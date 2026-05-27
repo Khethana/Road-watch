@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-page: #F8FAFC;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #F1F5F9;
+    --border: rgba(0,0,0,0.08);
+    --border-accent: rgba(249,115,22,0.3);
+    --text-primary: #0F172A;
+    --text-secondary: #475569;
+    --text-muted: #94A3B8;
+    
+    --primary: #F97316;
+    --primary-dark: #EA580C;
+    --danger: #EF4444;
+    --warning: #F59E0B;
+    --success: #22C55E;
+    --info: #3B82F6;
+  }
+
+  .dark {
+    --bg-page: #0A0F1E;
+    --bg-surface: #111827;
+    --bg-elevated: #1F2937;
+    --border: rgba(255,255,255,0.08);
+    --border-accent: rgba(249,115,22,0.2);
+    --text-primary: #F9FAFB;
+    --text-secondary: #9CA3AF;
+    --text-muted: #6B7280;
+  }
+
+  body {
+    @apply bg-page text-text-primary antialiased;
+  }
+
+  /* Custom Leaflet Map styles for dark mode */
+  .dark .leaflet-container {
+    background-color: var(--bg-page) !important;
+  }
+  
+  .dark .leaflet-layer,
+  .dark .leaflet-control-zoom-in,
+  .dark .leaflet-control-zoom-out,
+  .dark .leaflet-control-attribution {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+}
