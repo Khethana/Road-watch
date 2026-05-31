@@ -28,14 +28,12 @@ Road Watch is a civic-tech web application that empowers citizens to report road
 - [Android / Capacitor Build](#-android--capacitor-build)
 - [Deployment](#-deployment)
   - [Web (Vercel)](#web---vercel)
-  - [Web (Netlify)](#web---netlify)
 - [Application Routes](#-application-routes)
 - [State Management](#-state-management)
 - [Key Design Decisions](#-key-design-decisions)
 - [Environment Variables Reference](#-environment-variables-reference)
 - [Scripts Reference](#-scripts-reference)
 - [Contributing](#-contributing)
-- [License](#-license)
 
 ---
 
