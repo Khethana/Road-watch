@@ -2,7 +2,7 @@
 
 > **Better roads through radical transparency.**
 
-Road Watch is a civic-tech web application that empowers citizens to report road damage, track repair statuses in real time, and monitor municipal budget spending — all on an interactive map. It also ships with a native Android app via Capacitor.
+Road Watch is a civic-tech web application that empowers citizens to report road damage, track repair statuses in real time, and monitor municipal budget spending all on an interactive map. It also ships with a native Android app via Capacitor.
 
 [![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
@@ -304,21 +304,6 @@ service cloud.firestore {
   }
 }
 ```
-
-### 4. Enable Storage
-
-1. Go to **Storage** → **Get started**
-2. Apply permissive rules for development (tighten before going to production):
-
-```
-rules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-    match /{allPaths=**} {
-      allow read, write: if request.auth != null;
-    }
-  }
-}
 ```
 
 ### 5. Get Your Config Keys
@@ -405,24 +390,6 @@ This uses `@capacitor/assets` to auto-generate all required icon and splash scre
 
 4. Go to **Settings → Environment Variables** and add all variables from `.env.example` with your real values
 5. Click **Deploy**
-
-### Web — Netlify
-
-1. Go to [netlify.com](https://netlify.com) → **Add new site → Import from Git**
-2. Use the same build settings as above
-3. Add environment variables under **Site Settings → Environment Variables**
-4. Optionally add a `netlify.toml` at the project root:
-
-```toml
-[build]
-  command   = "npm run build"
-  publish   = "dist"
-
-[[redirects]]
-  from   = "/*"
-  to     = "/index.html"
-  status = 200
-```
 
 > The redirect rule is important because Road Watch uses **HashRouter** — Netlify/Vercel must serve `index.html` for all paths.
 
